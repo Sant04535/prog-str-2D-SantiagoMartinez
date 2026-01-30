@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class AdivinaNumero {
+public class Numero {
 
     public static void main(String[] args) {
 
