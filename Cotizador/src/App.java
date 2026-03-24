@@ -47,7 +47,6 @@ public class App {
         return valor;
     }
 
-
     public static void imprimirTicket(int tipoServicio, double pesoKg, int distanciaKm,
                                       boolean zonaRemota, double subtotal, double iva, double total) {
 

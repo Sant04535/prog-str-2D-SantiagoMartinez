@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.practicaexamen.HelloController"
+      spacing="14"
+      style="-fx-background-color: #f0f4f8; -fx-padding: 24;">
+
+
+    <Label text="Contactos de Emergencia"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <Separator/>
+
+
+    <GridPane hgap="12" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="110" prefWidth="110"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+               style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+        <TextField fx:id="txtNombre"
+                   promptText="Nombre completo"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"
+                   style="-fx-background-radius: 6; -fx-border-radius: 6;
+                          -fx-border-color: #bdc3c7; -fx-padding: 6 10;"/>
+
+        <Label text="Teléfono:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+               style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+        <TextField fx:id="txtTelefono"
+                   promptText="10 dígitos"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"
+                   style="-fx-background-radius: 6; -fx-border-radius: 6;
+                          -fx-border-color: #bdc3c7; -fx-padding: 6 10;"/>
+
+        <Label text="Parentesco:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+               style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+        <ComboBox fx:id="cmbParentesco"
+                  promptText="Selecciona parentesco"
+                  maxWidth="Infinity"
+                  GridPane.rowIndex="2" GridPane.columnIndex="1"
+                  style="-fx-background-radius: 6;"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Agregar"
+                onAction="#agregarContacto"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 6;
+                       -fx-padding: 7 16; -fx-cursor: hand;"/>
+        <Button text="Buscar"
+                onAction="#buscarContacto"
+                style="-fx-background-color: #2980b9; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 6;
+                       -fx-padding: 7 16; -fx-cursor: hand;"/>
+        <Button text="Actualizar"
+                onAction="#actualizarContacto"
+                style="-fx-background-color: #e67e22; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 6;
+                       -fx-padding: 7 16; -fx-cursor: hand;"/>
+        <Button text="Eliminar"
+                onAction="#eliminarContacto"
+                style="-fx-background-color: #c0392b; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 6;
+                       -fx-padding: 7 16; -fx-cursor: hand;"/>
+        <Button text="Limpiar"
+                onAction="#limpiarCampos"
+                style="-fx-background-color: #7f8c8d; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 6;
+                       -fx-padding: 7 16; -fx-cursor: hand;"/>
+    </HBox>
+
+    <Label fx:id="lblMensaje" text="" wrapText="true"
+           style="-fx-font-size: 13px;"/>
+
+    <Separator/>
+
+    <Label text="Contactos registrados:"
+           style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <!-- ListView -->
+    <ListView fx:id="listViewContactos"
+              prefHeight="220"
+              style="-fx-background-radius: 8; -fx-border-radius: 8;
+                     -fx-border-color: #bdc3c7;"/>
+
+</VBox>
